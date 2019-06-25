@@ -1,0 +1,7 @@
+name: Mango-UI
+version: 0.0.1
+description: Mango-UI holds modules commonly used throughout Mango applications.
+author: Louise van der Lith
+repository: https://github.com/louisevanderlith/mango-ui
+environment:
+  sdk: '>=2.0.0 < 3.0.0'
