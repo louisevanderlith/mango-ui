@@ -12,7 +12,7 @@ class FormState {
 
     _form.onInput.listen(validateElement);
   }
-  
+
   FormElement get form {
     return _form;
   }

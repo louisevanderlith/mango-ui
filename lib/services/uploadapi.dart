@@ -28,7 +28,7 @@ void uploadFile(Event e) {
       "ItemKey": getObjKey()
     };
 
-    if (files.length > 0) {
+    if (files.isNotEmpty) {
       File firstFile = files[0];
 
       doUpload(firstFile, infoObj, ctrlID);

@@ -1,4 +1,3 @@
-
 import 'dart:html';
 
 /// A [NodeValidator] which allows everything.

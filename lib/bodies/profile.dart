@@ -16,7 +16,7 @@ class Profile {
   final List<Portfolio> portfolia;
   final List<Sociallink> socials;
   final List<Header> headers;
-  
+
   Profile(this.title, this.description, this.email, this.phone, this.url,
       this.gtag, this.imageKey, this.portfolia, this.socials, this.headers);
 

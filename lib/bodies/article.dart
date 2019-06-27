@@ -12,7 +12,8 @@ class Article {
   String _writtenby;
   bool _public;
 
-  Article(String title, String intro, String category, Key imageKey, String content, String writtenby, bool public) {
+  Article(String title, String intro, String category, Key imageKey,
+      String content, String writtenby, bool public) {
     _title = title;
     _intro = intro;
     _category = category;
@@ -20,10 +21,6 @@ class Article {
     _content = content;
     _writtenby = writtenby;
     _public = public;
-  }
-
-  void save() {
-    print("still needs to save!");
   }
 
   String toJson() {

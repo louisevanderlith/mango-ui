@@ -10,7 +10,7 @@ class Login {
   Login(this.app, this.email, this.password);
 
   @override
-  String toString(){
-    return jsonEncode({"App": app, "Email": email, "Password": password});
-  } 
+  String toString() {
+    return jsonEncode({"App": app.toString(), "Email": email, "Password": password});
+  }
 }

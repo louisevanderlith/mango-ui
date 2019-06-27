@@ -1,7 +1,7 @@
 //Role defines a User's Role for a given Application
 class Role {
   final String application;
-  final String description;
+  final num description;
 
   Role(this.application, this.description);
 

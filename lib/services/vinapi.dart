@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:html';
 
-import '..//pathlookup.dart';
+import '../pathlookup.dart';
 import 'requester.dart';
 
 Future<HttpRequest> validateVIN(String vin) async {
@@ -9,4 +9,3 @@ Future<HttpRequest> validateVIN(String vin) async {
 
   return invokeService("GET", url, true, "");
 }
-
