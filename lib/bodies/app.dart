@@ -8,13 +8,16 @@ class App {
 
   App(this.name, this.ip, this.location, this.instanceID);
 
-  @override
-  String toString() {
-    return jsonEncode({
+  Map<String, dynamic> getObj() {
+    return {
       "Name": name,
       "IP": ip,
       "Location": location,
       "InstanceID": instanceID
-    });
+    };
+  }
+
+  Object toJson() {
+    return jsonEncode(getObj());
   }
 }

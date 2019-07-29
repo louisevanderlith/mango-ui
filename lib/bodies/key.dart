@@ -18,8 +18,7 @@ class Key {
     return DateTime.now();
   }
 
-  @override
-  String toString() {
+  String toJson() {
     return "${_key}`${_id}";
   }
 }

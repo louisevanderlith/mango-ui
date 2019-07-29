@@ -9,8 +9,7 @@ class Login {
 
   Login(this.app, this.email, this.password);
 
-  @override
-  String toString() {
-    return jsonEncode({"App": app.toString(), "Email": email, "Password": password});
+  String toJson() {
+    return jsonEncode({"App": app.getObj(), "Email": email, "Password": password});
   }
 }

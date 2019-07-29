@@ -9,8 +9,7 @@ class Message {
 
   Message(this.message, this.email, this.name, this.phone, this.to);
 
-  @override
-  String toString() {
+  String toJson() {
     return jsonEncode({
       "Body": message,
       "Email": email,

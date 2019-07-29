@@ -8,11 +8,11 @@ import '../pathlookup.dart';
 import 'requester.dart';
 
 Future<HttpRequest> createProfile(Profile obj) async {
-  return sendProfile("POST", obj.toString());
+  return sendProfile("POST", obj.toJson());
 }
 
 Future<HttpRequest> updateProfile(Key key, Profile obj) async {
-  final data = jsonEncode({"Key": key, "Body": obj.toString()});
+  final data = jsonEncode({"Key": key, "Body": obj.toJson()});
 
   return sendProfile("PUT", data);
 }

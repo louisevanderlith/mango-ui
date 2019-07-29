@@ -6,8 +6,7 @@ class Sociallink {
 
   Sociallink(this.icon, this.url);
 
-  @override
-  String toString() {
+  String toJson() {
     return jsonEncode({"Icon": icon, "URL": url});
   }
 }

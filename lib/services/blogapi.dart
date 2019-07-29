@@ -10,12 +10,12 @@ import 'requester.dart';
 Future<HttpRequest> createArticle(Article obj) async {
   var url = await buildPath("Blog.API", "article", new List<String>());
 
-  return invokeService("POST", url, true, obj.toString());
+  return invokeService("POST", url, true, obj.toJson());
 }
 
 Future<HttpRequest> updateArticle(Key key, Article obj) async {
   var url = await buildPath("Blog.API", "article", new List<String>());
-  final data = jsonEncode({"Key": key, "Body": obj.toString()});
+  final data = jsonEncode({"Key": key, "Body": obj.toJson()});
 
   return invokeService("PUT", url, true, data);
 }

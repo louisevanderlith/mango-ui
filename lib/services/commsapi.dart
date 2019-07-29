@@ -8,5 +8,5 @@ import 'requester.dart';
 Future<HttpRequest> sendMessage(Message obj) async {
   var url = await buildPath("Comms.API", "message", new List<String>());
 
-  return invokeService("POST", url, false, obj.toString());
+  return invokeService("POST", url, false, obj.toJson());
 }

@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'dart:html';
 
+/**
+ *invokeService is used to call a webservice.
+ */
 Future<HttpRequest> invokeService(
-    String method, String url, bool includeToken, dynamic data) {
+    String method, String url, bool includeToken, String data) {
   final compltr = new Completer<HttpRequest>();
   final request = HttpRequest();
 
@@ -22,6 +25,24 @@ Future<HttpRequest> invokeService(
   } else {
     request.send();
   }
+
+  return compltr.future;
+}
+
+Future<HttpRequest> invokeFormservice(String url, FormData data) {
+  final compltr = new Completer<HttpRequest>();
+  final request = HttpRequest();
+
+  request.open("POST", url);
+
+  request.setRequestHeader("Authorization", bearer);
+
+  request.onLoadEnd
+      .listen((e) => compltr.complete(request), onError: compltr.completeError);
+  request.onError.listen(compltr.completeError);
+  request.onProgress.listen(onProgress);
+
+  request.send(data);
 
   return compltr.future;
 }

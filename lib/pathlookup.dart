@@ -6,7 +6,7 @@ Map<String, String> _pastNames = {"Router.API": routerDefault()};
 
 String routerDefault() {
   InputElement hostPath = querySelector('#HostID');
-  return "https://router${hostPath.value}v1/discovery/";
+  return "https://router${hostPath.value}discovery/";
 }
 
 Future<String> getRouterPath(String apiName) async {
@@ -44,7 +44,7 @@ Future<String> buildPath(
     String apiName, String controller, List<String> params) async {
   var url = await getServiceURL(apiName);
 
-  var result = '${url}v1/${controller}';
+  var result = '${url}${controller}';
 
   for (var i = 0; i < params.length; i++) {
     result += '/${params[i]}';

@@ -9,8 +9,7 @@ class Header {
 
   Header(this.heading, this.text, this.imageKey);
 
-  @override
-  String toString() {
+  String toJson() {
     return jsonEncode({"ImageKey": imageKey, "Heading": heading, "Text": text});
   }
 }

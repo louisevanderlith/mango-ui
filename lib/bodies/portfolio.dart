@@ -9,8 +9,7 @@ class Portfolio {
 
   Portfolio(this.imageKey, this.url, this.name);
 
-  @override
-  String toString() {
+  String toJson() {
     return jsonEncode({"ImageKey": imageKey, "URL": url, "Name": name});
   }
 }

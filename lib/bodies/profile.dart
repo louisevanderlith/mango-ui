@@ -20,8 +20,7 @@ class Profile {
   Profile(this.title, this.description, this.email, this.phone, this.url,
       this.gtag, this.imageKey, this.portfolia, this.socials, this.headers);
 
-  @override
-  String toString() {
+  String toJson() {
     return jsonEncode({
       "Title": title,
       "Description": description,

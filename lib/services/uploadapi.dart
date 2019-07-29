@@ -11,7 +11,7 @@ String _imageURL;
 Future<HttpRequest> createUpload(FormData data) async {
   var url = await buildPath('Artifact.API', 'upload', new List<String>());
 
-  return invokeService("POST", url, true, data);
+  return invokeFormservice(url, data);
 }
 
 void uploadFile(Event e) {

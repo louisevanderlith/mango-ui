@@ -14,9 +14,8 @@ class Comment {
   void addChild(Comment child) {
     _children.add(child);
   }
-
-  @override
-  String toString() {
+  
+  String toJson() {
     return jsonEncode({
       "ItemKey": itemKey,
       "Text": text,

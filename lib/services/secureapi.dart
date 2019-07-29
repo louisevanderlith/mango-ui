@@ -18,7 +18,7 @@ Future<HttpRequest> updateRoles(Key key, List<Role> items) async {
 Future<HttpRequest> sendLogin(Login obj) async {
   final url = await buildPath("Secure.API", "login", new List<String>());
 
-  return invokeService("POST", url, false, obj.toString());
+  return invokeService("POST", url, false, obj.toJson());
 }
 
 Future<HttpRequest> sendForgot(String identity) async {
