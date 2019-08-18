@@ -7,7 +7,7 @@ class Role {
 
   Role(this.application, this.description);
 
-  String toJson() {
-    return jsonEncode({"ApplicationName": application, "Description": description});
+  Map<String, dynamic> toJson() {
+    return {"ApplicationName": application, "Description": description};
   }
 }

@@ -36,7 +36,7 @@ void uploadFile(Event e) {
   }
 }
 
-void doUpload(File file, Map<String, String> infoObj, String ctrlID) async {
+void doUpload(File file, Map<String, Object> infoObj, String ctrlID) async {
   var formData = new FormData();
   formData.appendBlob("file", file);
   formData.append("info", jsonEncode(infoObj));
@@ -52,7 +52,7 @@ void doUpload(File file, Map<String, String> infoObj, String ctrlID) async {
 }
 
 void finishUpload(
-    dynamic obj, Map<String, String> infoObj, String ctrlID) async {
+    dynamic obj, Map<String, Object> infoObj, String ctrlID) async {
   if (obj['Error'].length > 0) {
     print(obj['Error']);
     return;
