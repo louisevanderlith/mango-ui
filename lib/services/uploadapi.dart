@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:html';
 
+import 'package:mango_ui/bodies/up.dart';
+
 import '../keys.dart';
 import '../pathlookup.dart';
 import 'requester.dart';
@@ -22,11 +24,7 @@ void uploadFile(Event e) {
     var forAttr = fileElem.dataset['for'];
     var nameAttr = fileElem.dataset['name'];
     var ctrlID = fileElem.id;
-    var infoObj = {
-      "For": forAttr,
-      "ItemName": nameAttr,
-      "ItemKey": getObjKey()
-    };
+    var infoObj = new Up(forAttr, nameAttr, getObjKey());
 
     if (files.isNotEmpty) {
       File firstFile = files[0];
@@ -36,7 +34,7 @@ void uploadFile(Event e) {
   }
 }
 
-void doUpload(File file, Map<String, Object> infoObj, String ctrlID) async {
+void doUpload(File file, Up infoObj, String ctrlID) async {
   var formData = new FormData();
   formData.appendBlob("file", file);
   formData.append("info", jsonEncode(infoObj));
@@ -51,8 +49,7 @@ void doUpload(File file, Map<String, Object> infoObj, String ctrlID) async {
   }
 }
 
-void finishUpload(
-    dynamic obj, Map<String, Object> infoObj, String ctrlID) async {
+void finishUpload(dynamic obj, Up infoObj, String ctrlID) async {
   if (obj['Error'].length > 0) {
     print(obj['Error']);
     return;
