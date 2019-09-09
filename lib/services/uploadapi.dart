@@ -56,7 +56,7 @@ void finishUpload(dynamic obj, Up infoObj, String ctrlID) async {
   }
 
   if (_imageURL?.isEmpty ?? true) {
-    _imageURL = await buildPath('Artifact.API', "upload", ["file"]);
+    _imageURL = await buildPath('Artifact.API', "download", []);
   }
 
   var data = obj['Data'];
