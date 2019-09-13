@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'key.dart';
 
 class Header {
@@ -9,7 +7,7 @@ class Header {
 
   Header(this.heading, this.text, this.imageKey);
 
-  String toJson() {
-    return jsonEncode({"ImageKey": imageKey, "Heading": heading, "Text": text});
+  Map<String, dynamic> toJson() {
+    return {"ImageKey": imageKey, "Heading": heading, "Text": text};
   }
 }

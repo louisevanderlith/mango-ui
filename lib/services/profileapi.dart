@@ -12,13 +12,13 @@ Future<HttpRequest> createProfile(Profile obj) async {
 }
 
 Future<HttpRequest> updateProfile(Key key, Profile obj) async {
-  final data = jsonEncode({"Key": key, "Body": obj.toJson()});
-
+  final data = {"Key": key.toJson(), "Body": obj.toJson()};
+  
   return sendProfile("PUT", data);
 }
 
-Future<HttpRequest> sendProfile(String method, String data) async {
+Future<HttpRequest> sendProfile(String method, Map<String, dynamic> data) async {
   final url = await buildPath("Folio.API", "profile", new List<String>());
 
-  return invokeService(method, url, true, data);
+  return invokeService(method, url, true, jsonEncode(data));
 }

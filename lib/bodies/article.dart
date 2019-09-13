@@ -1,6 +1,4 @@
 //Blog.API Article
-import 'dart:convert';
-
 import 'key.dart';
 
 class Article {
@@ -23,8 +21,8 @@ class Article {
     _public = public;
   }
 
-  String toJson() {
-    return jsonEncode({
+  Map<String, dynamic> toJson() {
+    return {
       "Title": _title,
       "Intro": _intro,
       "Category": _category,
@@ -32,6 +30,6 @@ class Article {
       "Content": _content,
       "WrittenBy": _writtenby,
       "Public": _public
-    });
+    };
   }
 }

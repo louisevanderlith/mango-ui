@@ -5,7 +5,7 @@ import 'dart:html';
  *invokeService is used to call a webservice.
  */
 Future<HttpRequest> invokeService(
-    String method, String url, bool includeToken, String data) {
+    String method, String url, bool includeToken, dynamic data) {
   final compltr = new Completer<HttpRequest>();
   final request = HttpRequest();
 

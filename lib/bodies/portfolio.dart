@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'key.dart';
 
 class Portfolio {
@@ -9,7 +7,7 @@ class Portfolio {
 
   Portfolio(this.imageKey, this.url, this.name);
 
-  String toJson() {
-    return jsonEncode({"ImageKey": imageKey, "URL": url, "Name": name});
+  Map<String, dynamic> toJson() {
+    return {"ImageKey": imageKey, "URL": url, "Name": name};
   }
 }

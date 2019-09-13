@@ -21,7 +21,7 @@ Future<HttpRequest> updateArticle(Key key, Article obj) async {
 }
 
 Future<HttpRequest> deleteArticle(Key key) async {
-  var url = await buildPath("Blog.API", "article", [key.toString()]);
+  var url = await buildPath("Blog.API", "article", [key.toJson()]);
 
   return invokeService("DELETE", url, true, "");
 }

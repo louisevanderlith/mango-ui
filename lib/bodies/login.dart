@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'app.dart';
 
 class Login {
@@ -9,7 +7,7 @@ class Login {
 
   Login(this.app, this.email, this.password);
 
-  String toJson() {
-    return jsonEncode({"App": app.getObj(), "Email": email, "Password": password});
+  Map<String, dynamic> toJson() {
+    return {"App": app.toJson(), "Email": email, "Password": password};
   }
 }

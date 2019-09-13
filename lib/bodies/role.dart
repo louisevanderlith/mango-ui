@@ -1,6 +1,4 @@
-//Role defines a User's Role for a given Application
-import 'dart:convert';
-
+///Role defines a User's Role for a given Application
 class Role {
   final String application;
   final num description;

@@ -1,12 +1,11 @@
-import 'dart:convert';
-
+///Sociallink 
 class Sociallink {
   final String icon;
   final String url;
 
   Sociallink(this.icon, this.url);
 
-  String toJson() {
-    return jsonEncode({"Icon": icon, "URL": url});
+  Map<String, dynamic> toJson() {
+    return {"Icon": icon, "URL": url};
   }
 }

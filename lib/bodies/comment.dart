@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'key.dart';
 
 class Comment {
@@ -15,12 +13,12 @@ class Comment {
     _children.add(child);
   }
   
-  String toJson() {
-    return jsonEncode({
+  Map<String, dynamic> toJson() {
+    return {
       "ItemKey": itemKey,
       "Text": text,
       "CommentType": commentType,
       "Children": _children
-    });
+    };
   }
 }

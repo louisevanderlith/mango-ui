@@ -20,8 +20,8 @@ class Profile {
   Profile(this.title, this.description, this.email, this.phone, this.url,
       this.gtag, this.imageKey, this.portfolia, this.socials, this.headers);
 
-  String toJson() {
-    return jsonEncode({
+  Map<String, dynamic> toJson() {
+    return {
       "Title": title,
       "Description": description,
       "ContactEmail": email,
@@ -32,6 +32,6 @@ class Profile {
       "PortfolioItems": portfolia,
       "SocialLinks": socials,
       "Headers": headers
-    });
+    };
   }
 }

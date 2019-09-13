@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Message {
   final String message;
   final String email;
@@ -9,13 +7,13 @@ class Message {
 
   Message(this.message, this.email, this.name, this.phone, this.to);
 
-  String toJson() {
-    return jsonEncode({
+  Map<String, dynamic> toJson() {
+    return {
       "Body": message,
       "Email": email,
       "Name": name,
       "Phone": phone,
       "To": to
-    });
+    };
   }
 }
