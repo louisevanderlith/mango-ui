@@ -4,10 +4,11 @@ class Comment {
   final Key itemKey;
   final String text;
   final String commentType;
+  final String userImage;
 
   List<Comment> _children;
 
-  Comment(this.itemKey, this.text, this.commentType);
+  Comment(this.itemKey, this.text, this.commentType, this.userImage);
 
   void addChild(Comment child) {
     _children.add(child);
@@ -18,7 +19,8 @@ class Comment {
       "ItemKey": itemKey,
       "Text": text,
       "CommentType": commentType,
-      "Children": _children
+      "Children": _children,
+      "UserImage": userImage,
     };
   }
 }
