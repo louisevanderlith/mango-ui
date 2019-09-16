@@ -11,6 +11,8 @@ class FormState {
     disableSubmit(true);
 
     _form.onInput.listen(validateElement);
+    //Auto-complete is a bastard
+    _form.onBlur.listen(validateElement);
   }
 
   FormElement get form {
