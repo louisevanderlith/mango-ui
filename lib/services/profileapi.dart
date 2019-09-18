@@ -8,17 +8,11 @@ import '../pathlookup.dart';
 import 'requester.dart';
 
 Future<HttpRequest> createProfile(Profile obj) async {
-  return sendProfile("POST", obj.toJson());
+   final url = await buildPath("Folio.API", "profile", new List<String>());
+  return invokeService("POST", url, true, jsonEncode(obj.toJson()));
 }
 
 Future<HttpRequest> updateProfile(Key key, Profile obj) async {
-  final data = {"Key": key.toJson(), "Body": obj.toJson()};
-  
-  return sendProfile("PUT", data);
-}
-
-Future<HttpRequest> sendProfile(String method, Map<String, dynamic> data) async {
-  final url = await buildPath("Folio.API", "profile", new List<String>());
-
-  return invokeService(method, url, true, jsonEncode(data));
+  final url = await buildPath("Folio.API", "profile", [key.toJson()]);
+  return invokeService("PUT", url, true, jsonEncode(obj.toJson()));
 }

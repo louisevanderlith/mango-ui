@@ -14,8 +14,8 @@ Future<HttpRequest> createArticle(Article obj) async {
 }
 
 Future<HttpRequest> updateArticle(Key key, Article obj) async {
-  var url = await buildPath("Blog.API", "article", new List<String>());
-  final data = jsonEncode({"Key": key.toJson(), "Body": obj.toJson()});
+  var url = await buildPath("Blog.API", "article", [key.toJson()]);
+  final data = jsonEncode(obj.toJson());
 
   return invokeService("PUT", url, true, data);
 }
