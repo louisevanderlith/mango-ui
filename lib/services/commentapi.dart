@@ -7,7 +7,7 @@ import 'requester.dart';
 import '../bodies/comment.dart';
 
 Future<HttpRequest> createComment(Comment obj) async {
-  var url = await buildPath("Comment.API", "message", new List<String>());
+  var url = await buildPath("Comment.API", "messages", new List<String>());
 
   return invokeService("POST", url, true, jsonEncode(obj.toJson()));
 }

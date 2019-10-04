@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:html';
 
+import 'package:mango_ui/bodies/register.dart';
+
 import '../bodies/key.dart';
 import '../bodies/login.dart';
 import '../bodies/role.dart';
@@ -24,6 +26,13 @@ Future<HttpRequest> sendLogin(Login obj) async {
 Future<HttpRequest> sendForgot(String identity) async {
   final url = await buildPath("Secure.API", "forgot", new List<String>());
   final data = jsonEncode(identity);
+
+  return invokeService("POST", url, false, data);
+}
+
+Future<HttpRequest> sendRegister(Register obj) async {
+  final url = await buildPath("Secure.API", "register", new List<String>());
+  final data = jsonEncode(obj.toJson());
 
   return invokeService("POST", url, false, data);
 }
