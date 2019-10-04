@@ -19,7 +19,7 @@ void main() {
   test('Profile Serialization', () {
     var portfolia = new List<Portfolio>();
     portfolia.add(
-        new Portfolio(new Key("0`0"), "https://p.website.com", "Portfolio A"));
+        new Portfolio("fa-facebook", "https://p.website.com", "Portfolio A", "This is a portfolio"));
 
     var socials = new List<Sociallink>();
     socials.add(new Sociallink("fa-facebook", "https://facebook.com/website"));
@@ -42,7 +42,7 @@ void main() {
     var input = {"Key": k.toJson(), "Body": p.toJson()};
     var actual = jsonEncode(input);
     var expected =
-        "{\"Key\":\"0`0\",\"Body\":{\"Title\":\"mango\",\"Description\":\"Test Mango profile\",\"ContactEmail\":\"test@fake.com\",\"ContactPhone\":\"0000001234\",\"URL\":\"https://website.com\",\"GTag\":\"UA-000000000-0\",\"ImageKey\":\"0`0\",\"PortfolioItems\":[{\"ImageKey\":\"0`0\",\"URL\":\"https://p.website.com\",\"Name\":\"Portfolio A\"}],\"SocialLinks\":[{\"Icon\":\"fa-facebook\",\"URL\":\"https://facebook.com/website\"}],\"Headers\":[{\"ImageKey\":\"0`0\",\"Heading\":\"Header A\",\"Text\":\"Testing Head A\"}]}}";
+        "{\"Key\":\"0`0\",\"Body\":{\"Title\":\"mango\",\"Description\":\"Test Mango profile\",\"ContactEmail\":\"test@fake.com\",\"ContactPhone\":\"0000001234\",\"URL\":\"https://website.com\",\"GTag\":\"UA-000000000-0\",\"ImageKey\":\"0`0\",\"PortfolioItems\":[{\"Icon\":\"fa-facebook\",\"URL\":\"https://p.website.com\",\"Name\":\"Portfolio A\",\"Description\":\"This is a portfolio\"}],\"SocialLinks\":[{\"Icon\":\"fa-facebook\",\"URL\":\"https://facebook.com/website\"}],\"Headers\":[{\"ImageKey\":\"0`0\",\"Heading\":\"Header A\",\"Text\":\"Testing Head A\"}]}}";
     expect(actual, expected);
   });
 }
