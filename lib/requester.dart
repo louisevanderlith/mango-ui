@@ -11,8 +11,8 @@ String getToken() {
   return window.sessionStorage['client.token'];
 }
 
-// getToken returns the 'client.endpoints' from storage
-Map<String, String> getEndpoint(String name) {
+// getEndpoint returns the 'client.endpoints' from storage
+String getEndpoint(String name) {
   if (window.sessionStorage == null) {
     return null;
   }
@@ -62,8 +62,6 @@ Future<HttpRequest> invokeFormservice(String url, FormData data) {
   if (token.length > 0) {
     request.setRequestHeader("Authorization", "Bearer ${token}");
   }
-
-  request.setRequestHeader("Authorization", "Bearer ${token}");
 
   request.onLoadEnd
       .listen((e) => compltr.complete(request), onError: compltr.completeError);
