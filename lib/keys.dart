@@ -1,8 +1,6 @@
-import 'dart:html';
-
 //getObjKey will attempt to read a key from the path or querystring
 Key getObjKey() {
-  var path = window.location.pathname;
+  var path = Uri.base.path; //window.location.pathname;
   final lastSlash = path.lastIndexOf('/');
 
   if (lastSlash > (path.length - 10)) {
